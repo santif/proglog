@@ -12,7 +12,7 @@ func NewHTTPServer(addr string) *http.Server {
 	r.HandleFunc("/", httpsrv.handleProduce).Methods("POST")
 	r.HandleFunc("/", httpsrv.handleConsume).Methods("GET")
 	return &http.Server{
-		Addr: addr,
+		Addr:    addr,
 		Handler: r,
 	}
 }
@@ -20,11 +20,13 @@ func NewHTTPServer(addr string) *http.Server {
 type httpServer struct {
 	Log *Log
 }
+
 func newHTTPServer() *httpServer {
 	return &httpServer{
 		Log: NewLog(),
 	}
 }
+
 type ProduceRequest struct {
 	Record Record `json:"record"`
 }

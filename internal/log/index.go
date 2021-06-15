@@ -87,4 +87,3 @@ func (i *index) Close() error {
 func (i *index) Name() string {
 	return i.file.Name()
 }
-

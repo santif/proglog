@@ -1,8 +1,8 @@
 package main
 
 import (
-	"log"
 	"github.com/santif/proglog/internal/server"
+	"log"
 )
 
 func main() {

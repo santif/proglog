@@ -3,16 +3,16 @@ package log
 import (
 	"fmt"
 	api "github.com/santif/proglog/api/v1"
+	"google.golang.org/protobuf/proto"
 	"os"
 	"path"
-	"google.golang.org/protobuf/proto"
 )
 
 type segment struct {
-	store *store
-	index *index
+	store                  *store
+	index                  *index
 	baseOffset, nextOffset uint64
-	config Config
+	config                 Config
 }
 
 func newSegment(dir string, baseOffset uint64, c Config) (*segment, error) {
